@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NOVA - Consultoria em TI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo_nova.png" alt="Nova Logo">
+            </div>
+            <nav>
+                <div class="menu-hamburguer" id="menuHamburguer">
+                    <img src="images/icone_menu.png" alt="Menu" style="width: 30px; height: auto;">
+                </div>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#home">Início</a></li>
+                    <li>
+                        <a href="#servicos" class="servicos-link">Serviços &#9662</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><img src="images/icone_hexagono.png" alt="Ícone" class="dropdown-icon"> <a
+                                        href="powerbi.html">Dashboards com PowerBI</a></li>
+                                <li><img src="images/icone_hexagono.png" alt="Ícone" class="dropdown-icon"><a
+                                        href="power_automate.html">Automação com Power Automate</a></li>
+                                <li><img src="images/icone_hexagono.png" alt="Ícone" class="dropdown-icon"><a
+                                        href="infraestrutura_redes.html">Infraestrutura de Redes</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#faq">FAQ's</a></li>
+                    <li><a href="#contato-section" class="btn-contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Fullscreen -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-menu" id="close-menu">
+            <img src="images/icone_fechar.png" alt="Fechar Menu" />
+        </span>
+        <ul id="fullscreenNavList">
+            <li><a href="#home">Início</a></li>
+            <li class="dropdown-container">
+                <a href="#" class="servicos-link">Serviços &#9662;</a>
+                <!-- Certifique-se de que href seja "#" para evitar redirecionamento -->
+                <div class="dropdown_menu" id="dropdownMobileMenu"> <!-- Nome da classe atualizado -->
+                    <ul>
+                        <li><a href="powerbi.html">Dashboards com PowerBI</a></li>
+                        <li><a href="power_automate.html">Automação com Power Automate</a></li>
+                        <li><a href="infraestrutura_redes.html">Infraestrutura de Redes</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#vantagens">Vantagens</a></li>
+            <li><a href="#faq">FAQ's</a></li>
+            <li><a href="#contato-section">Contato</a></li>
+        </ul>
+    </div>
+
+    </header>
+
+
+    <!-- Seção Principal -->
+    <section class="hero section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-text">Inovação que Transforma</h1>
+                <h2 class="hero-text">Consultoria em TI</h2>
+                <p class="hero-text">A NOVA oferece expertise em Dashboards com PowerBI, automações com Power Automate e
+                    consultoria em infraestrutura de rede, proporcionando soluções personalizadas para otimizar a
+                    eficiência da sua empresa.</p>
+                <div class="buttons">
+                    <a href="#contato-section" class="btn-primary">Solicite um Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section class="servicos section" id="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-grid">
+                <div class="servico">
+                    <a href="powerbi.html">
+                        <img src="images/icone_powerbi.png" alt="Dashboards com PowerBI">
+                        <h3>Dashboards com PowerBI</h3>
+                        <p>Desenvolvimento de dashboards avançados, oferecendo visualizações claras para tomada de
+                            decisões estratégicas.</p>
+                    </a>
+                </div>
+                <div class="servico">
+                    <a href="power_automate.html">
+                        <img src="images/icone_power_automate.png" alt="Automação com Power Automate">
+                        <h3>Automação com Power Automate</h3>
+                        <p>Automatize processos e fluxos de trabalho, economizando tempo e aumentando a eficiência da
+                            sua empresa.</p>
+                    </a>
+                </div>
+                <div class="servico">
+                    <a href="infraestrutura_redes.html">
+                        <img src="images/icone_redes.png" alt="Infraestrutura de Redes">
+                        <h3>Infraestrutura de Redes</h3>
+                        <p>Consultoria especializada em redes, garantindo conectividade segura e de alta performance
+                            para seu negócio.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção "Por que escolher a NOVA?" -->
+    <section class="porque-nova section" id="vantagens">
+        <div class="container">
+            <h2>Por que escolher a NOVA?</h2>
+            <p>A NOVA oferece soluções de TI personalizadas que maximizam a eficiência e resultados para sua empresa.
+            </p>
+            <div class="porque-grid">
+                <div class="coluna coluna-esquerda"> <!-- Coluna da esquerda -->
+                    <div class="item">
+                        <div class="texto">
+                            <h3>Flexibilidade</h3>
+                            <p>Oferecemos soluções sob medida, adaptadas às necessidades específicas da sua empresa.</p>
+                        </div>
+                        <div class="icone">
+                            <img src="images/icone_experiencia.png" alt="Experiência">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="texto">
+                            <h3>Preços Competitivos</h3>
+                            <p>Oferecemos serviços de alta qualidade com excelente custo-benefício para empresas de
+                                todos os tamanhos.</p>
+                        </div>
+                        <div class="icone">
+                            <img src="images/icone_preco_competitivo.png" alt="Preços Competitivos">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem Central -->
+                <div class="imagem-central">
+                    <img src="images/imagem_central_porque_escolher_a_nova.jpg" alt="Imagem Central">
+                </div>
+
+                <div class="coluna coluna-direita"> <!-- Coluna da direita -->
+                    <div class="item">
+                        <div class="texto">
+                            <h3>Agilidade</h3>
+                            <p>Comprometidos com prazos, garantimos a entrega de soluções dentro do tempo estabelecido.
+                            </p>
+                        </div>
+                        <div class="icone">
+                            <img src="images/icone_entrega.png" alt="Entrega Rápida">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="texto">
+                            <h3>Suporte</h3>
+                            <p>Atendimento ágil e suporte contínuo para garantir o sucesso de seus projetos.</p>
+                        </div>
+                        <div class="icone">
+                            <img src="images/icone_suporte.png" alt="Suporte">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section" id="faq">
+        <div class="container">
+            <h2>FAQ's</h2>
+            <p class="faq-description">Esclareça suas dúvidas e conheça mais sobre nossos serviços.</p>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O que é a NOVA?</span>
+                    <img src="images/icone_down_arrow.png" alt="Seta para baixo" class="arrow down">
+                </button>
+                <div class="faq-answer">
+                    <p>A NOVA é uma empresa de consultoria em TI especializada em Dashboards com PowerBI, Automação com
+                        Power Automate e Infraestrutura de Redes. Fornecemos soluções personalizadas para atender às
+                        necessidades específicas dos nossos clientes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quais serviços a NOVA oferece?</span>
+                    <img src="images/icone_down_arrow.png" alt="Seta para baixo" class="arrow down">
+                </button>
+                <div class="faq-answer">
+                    <p>Oferecemos desenvolvimento de dashboards personalizados, automação de processos empresariais com
+                        Power Automate, e suporte completo em infraestrutura de redes, incluindo segurança e otimização
+                        de sistemas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Como posso solicitar um serviço?</span>
+                    <img src="images/icone_down_arrow.png" alt="Seta para baixo" class="arrow down">
+                </button>
+                <div class="faq-answer">
+                    <p>Para solicitar um serviço, você pode entrar em contato conosco diretamente pelo nosso site na
+                        seção de Contato ou enviar um e-mail para nossa equipe. Também oferecemos uma consulta inicial
+                        gratuita para entender suas necessidades.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Qual é o diferencial da NOVA em relação a outras consultorias?</span>
+                    <img src="images/icone_down_arrow.png" alt="Seta para baixo" class="arrow down">
+                </button>
+                <div class="faq-answer">
+                    <p>Nosso diferencial está na personalização das soluções e na flexibilidade de adaptação às demandas
+                        específicas de cada cliente, utilizando as melhores práticas e tecnologias de mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato-section">
+        <h2>Solicite um Orçamento</h2>
+        <p>Entre em contato conosco preenchendo o formulário abaixo:</p>
+        <div class="container">
+            <div class="contact-info">
+                <div class="info">
+                    <h3>Telefone:</h3>
+                    <p>+55 (31) 92005-7295</p>
+                    <h3>Email:</h3>
+                    <p>julio.ribeirolr@hotmail.com</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group inline">
+                        <input type="text" id="nome" name="nome" placeholder="Nome*" required>
+                        <input type="email" id="email" name="email" placeholder="Email*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="assunto" name="assunto" placeholder="Assunto">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua Mensagem*" required></textarea>
+                    </div>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-overlay"></div>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo_nova.png" alt="Logo Nova">
+                <p>A NOVA oferece expertise em Dashboards com PowerBI, automações com Power Automate e consultoria em
+                    infraestrutura de rede, proporcionando soluções personalizadas para otimizar a eficiência da sua
+                    empresa.</p>
+                <p>Siga-nos:</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nova_process/"><img src="images/icone_instagram.png"
+                            alt="Instagram">Instagram</a>
+                    <a href="#"><img src="images/icone_linkedin.png" alt="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-services">
+                <h3>SERVIÇOS</h3>
+                <ul>
+                    <li><a href="powerbi.html">Dashboards com PowerBI</a></li>
+                    <li><a href="power_automate.html">Automação com Power Automate</a></li>
+                    <li><a href="infraestrutura_redes.html">Infraestrutura de Redes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h3>INFORMAÇÃO</h3>
+                <ul>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>CONTATOS</h3>
+                <p><img src="images/icone_telefone.png" alt="Telefone"> +55 (31) 92005-7295</p>
+                <p><img src="images/icone_email.png" alt="Email"> julio.ribeirolr@hotmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 NOVA - Todos os direitos reservados.</p>
+        </div>
+
+    </footer>
+
+    <!-- Link para o JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

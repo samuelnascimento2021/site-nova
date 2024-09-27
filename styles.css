@@ -1,0 +1,982 @@
+/* Definindo o estilo geral e fontes */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0e27;
+    color: #ffffff;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Ajustando o header para flexbox e corrigindo o alinhamento */
+header {
+    position: fixed; /* Mudei para fixed para garantir que o cabeçalho fique visível ao rolar */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: transparent; /* Cor transparente inicialmente */
+    transition: background-color 0.3s ease; /* Transição suave */
+    z-index: 10;
+}
+
+header.scrolled {
+    background-color: #032437; /* Cor sólida quando rolado */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav {
+    position: relative;
+}
+
+nav .menu-toggle {
+    display: none; /* Oculta o menu toggle por padrão */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li :hover {
+    color: #0c9bca;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+nav li {
+    position: relative; /* Para o posicionamento do dropdown */
+}
+
+nav .seta {
+    margin-left: 5px; /* Espaço entre o texto e a setinha */
+    pointer-events: none; /* Desativa os eventos de clique */
+}
+
+.dropdown {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Para ficar sobre os itens */
+    top: 100%; /* Coloca logo abaixo do link */
+    left: 0;
+    background-color: white; /* Cor do fundo do dropdown */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1; /* Para que fique acima de outros elementos */
+}
+
+nav li:hover .dropdown {
+    display: block; /* Mostra o dropdown ao passar o mouse */
+}
+
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alterado para flex */
+    flex-direction: column; /* Alinha os itens em coluna */
+}
+
+.dropdown li {
+    padding: 10px 5px; /* Espaçamento dos itens do dropdown */
+    display: flex; /* Alinha os itens em linha */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.dropdown-icon {
+    width: 12px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+}
+
+.dropdown li img {
+    width: 8px; /* Tamanho do ícone circular */
+    height: 8px; /* Tamanho do ícone circular */
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+.dropdown li a {
+    color: #333; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 15px;
+}
+
+.btn-contato {
+    background-color: #0a7ea5;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contato:hover {
+    background-color: #0a6d8a;
+    color: #ffffff;
+}
+
+/* Estilos para a seção hero (principal) */
+.hero {
+    background-image: url('images/background3_header.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 50px;
+    margin-bottom: 0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: #0c9bca;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: left;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0a7ea5;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0a6d8a;
+}
+
+/* Seção de Serviços */
+.servicos {
+    padding: 80px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    color: #333;
+}
+
+.servicos h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #003366;
+}
+
+.servicos-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 20px; /* Espaçamento horizontal entre as caixas */
+    row-gap: 20px; /* Espaçamento vertical entre as caixas */
+}
+
+/* Adicionando o efeito de zoom */
+.servico {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(30% - 20px); /* Reduzida a largura para garantir que três caixas caibam na mesma linha */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px; /* Limitar a largura máxima das caixas */
+    margin: 0 auto; /* Centraliza as caixas */
+    transition: opacity 1.5s ease, transform 0.3s ease; /* Transições suaves */
+    opacity: 0; /* Começa invisível */
+}
+
+.servico.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para a posição original */
+}
+
+/* Efeito ao passar o mouse (hover) */
+.servico:hover {
+    transform: scale(1.05); /* Ampliar 5% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentar a sombra para dar mais profundidade */
+}
+
+/* Limitar a largura máxima dos textos internos */
+.servico h3 {
+    font-size: 22px;
+    color: #0a7ea5;
+    max-width: 250px; /* Limitar a largura máxima do texto */
+    margin: 0 auto; /* Centraliza o texto */
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 15px;
+    color: #666;
+    max-width: 250px; /* Limitar a largura máxima do texto */
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+.servico img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.servico a {
+    display: block; /* Faz o link ocupar toda a área do card */
+    text-decoration: none; /* Remove o sublinhado do texto */
+    color: inherit; /* Mantém a cor do texto original */
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 1024px) {
+    .servico {
+        width: calc(45% - 20px); /* Duas colunas em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .servicos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servico {
+        width: 100%; /* Caixa ocupa a tela toda em telas menores */
+    }
+}
+
+/* Seção "Por que escolher a NOVA?" */
+.porque-nova {
+    padding: 80px 0;
+    background-color: #ffffff;
+    text-align: center;
+    color: #333;
+}
+
+.porque-nova h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+.porque-nova p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.porque-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.icone{
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transformação e a sombra */
+}
+
+.icone:hover{    
+    transform: scale(1.1); /* Ampliar 10% */
+}
+
+.texto {
+    max-width: 300px; /* Limita a largura do texto */
+}
+
+.texto h3 {
+    font-size: 22px; /* Tamanho do título reduzido */
+    color: #0a7ea5;
+    margin-bottom: 8px;
+}
+
+.texto p {
+    font-size: 14px; /* Tamanho do parágrafo reduzido */
+    color: #666;
+    line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+}
+
+.item img {
+    width: 60px; /* Tamanho do ícone */
+    height: auto;
+}
+
+.imagem-central {
+    flex: 0 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transformação e a sombra */
+}
+
+.imagem-central img {
+    max-width: 400px; /* Tamanho maior para a imagem central */
+    height: auto;
+}
+
+.imagem-central:hover{
+    transform: scale(1.1); /* Ampliar 10% */
+}
+
+/* Estilos para a coluna da esquerda (Experiência e Preços Competitivos) */
+.coluna-esquerda .item {
+    flex-direction: row; /* Ícone à direita do texto */
+    text-align: right; /* Texto alinhado à direita */
+}
+
+.coluna-esquerda .texto {
+    margin-right: 20px; /* Espaçamento entre o texto e o ícone */
+}
+
+/* Estilos para a coluna da direita (Entrega Rápida e Suporte) */
+.coluna-direita .item {
+    flex-direction: row-reverse; /* Ícone à esquerda do texto */
+    text-align: left; /* Texto alinhado à esquerda */
+}
+
+.coluna-direita .texto {
+    margin-left: 20px; /* Espaçamento entre o texto e o ícone */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .porque-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coluna {
+        width: 100%;
+    }
+
+    .coluna-esquerda .item {
+        flex-direction: row-reverse; 
+        text-align: left; 
+    }
+
+    .coluna-esquerda .texto {
+        margin-left: 20px;
+    }
+
+    .imagem-central img {
+        margin: 20px 0;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .item img {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .texto {
+        max-width: 100%; /* Para telas menores, o texto pode ocupar mais espaço */
+    }
+}
+
+/* Estilos para o menu toggle */
+.menu-toggle {
+    display: none; /* Oculta por padrão */
+}
+
+.menu-hamburguer {
+    display: none; /* Oculta por padrão */
+}
+
+/* Mostrar o menu toggle em telas pequenas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra no mobile */
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostra no mobile */
+    }
+
+    nav ul {
+        display: none; /* Oculta o menu por padrão no mobile */
+        flex-direction: column; /* Alinha os itens em coluna */
+        width: 100%; /* Largura total para o dropdown */
+        background-color: #0a0e27; /* Cor do fundo do menu */
+        position: absolute; /* Para posicionar o menu sobre o conteúdo */
+        top: 60px; /* Ajuste conforme necessário para distância do cabeçalho */
+        left: 0;
+        z-index: 10; /* Certifique-se que esteja acima de outros elementos */
+    }
+
+    nav.active ul {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+}
+
+/* Estilos para o menu de tela cheia */
+.fullscreen-menu {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixa na tela */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: rgba(10, 14, 39, 0.95); /* Cor de fundo semi-transparente */
+    color: white; /* Cor do texto */
+    z-index: 1000; /* Garantir que fique acima de outros elementos */
+    flex-direction: column; /* Itens empilhados verticalmente */
+    justify-content: left; /* Centraliza os itens */
+    align-items: center; /* Centraliza os itens */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.fullscreen-menu ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    width: 100%; /* Largura total */
+    padding-top: 50px;
+}
+
+.fullscreen-menu li {
+    padding: 15px; /* Espaçamento interno nos itens */
+    text-align: left; /* Centraliza o texto */
+    font-size: 20px; /* Tamanho do texto maior */
+}
+
+/* Mostra o menu quando ativo */
+.fullscreen-menu.active {
+    display: flex; /* Mostra o menu */
+}
+
+.fullscreen-menu a {
+    color: #ffffff; /* Cor branca */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.fullscreen-menu a:hover {
+    color: #cccccc; /* Cor ao passar o mouse, opcional */
+}
+
+/* Botão de fechar */
+.close-menu {
+    position: absolute; /* Fixa o botão no canto superior direito */
+    top: 20px; /* Espaçamento do topo */
+    right: 60px; /* Espaçamento da direita */
+    font-size: 30px; /* Tamanho do texto */
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+.close-menu img {
+    width: 30px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo para o dropdown no menu fullscreen */
+.dropdown_menu {
+    display: block; /* Escondido por padrão */
+    padding: 10px 0; /* Espaçamento */
+    width: 100%; /* Largura total */
+    text-align: center; /* Centraliza o texto */
+}
+
+.dropdown_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown_menu li {
+    padding: 5px 15px; /* Espaçamento entre os itens */
+    text-align: left;
+    font-size: 17px; /* Tamanho do texto para os subitens */
+}
+
+.dropdown_menu a {
+    color: #ffffff; /* Letra branca */
+    text-decoration: none; /* Sem sublinhado */
+}
+
+.dropdown_menu a:hover {
+    color: #cccccc; /* Cor ao passar o mouse */
+}
+
+
+/* Seção FAQ */
+.faq {
+    background-color: #f7f7f7; /* Cor de fundo */
+    padding: 50px;
+    padding-top: 80px;
+}
+
+.faq h2 {
+    color: #032437; /* Cor de destaque */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.faq-description {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666666;
+    font-size: 18px;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #032437; /* Cor de destaque */
+    color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-answer {
+    max-height: 0; /* Altura inicial */
+    overflow: hidden; /* Oculta o conteúdo que excede a altura */
+    padding: 0 20px; /* Adiciona espaçamento interno */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Transição suave para max-height e padding */
+    color: #333333;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Defina um valor que acomode o conteúdo */
+    padding: 15px 20px; /* Adiciona espaçamento interno ao abrir */
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease; /* Transição suave para a rotação */
+}
+
+/* Ícone da seta para baixo por padrão */
+.arrow.down {
+    content: url('images/icone_down_arrow.png');
+}
+
+/* Ícone da seta para cima quando ativo */
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+    content: url('images/icone_up_arrow.png');
+}
+
+/* Aplicar animação nas sections*/
+
+.hero-text {
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Transições suaves */
+}
+
+.hero-text.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para a posição original */
+}
+
+.section {
+    opacity: 0; /* Começa invisível */
+}
+
+.section.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para a posição original */
+}
+
+/* Adiciona a transição para a classe visible */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 0.6s ease; /* Suaviza a transição */
+}
+
+.item {
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.faq-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Seção Solicite um orçamento */
+
+#contato-section {
+    padding: 100px 0;
+    background-color: #fff; /* Fundo branco */
+    text-align: center; /* Título centralizado */
+}
+
+#contato-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+#contato-section .contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    text-align: left; /* Alinha tudo à esquerda */
+}
+
+#contato-section h2 {
+    font-size: 32px;
+    color: #0a7ea5; /* Cor do título */
+    margin-bottom: 10px;
+}
+
+#contato-section p {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+#contato-section .contact-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+#contato-section .contact-info ul li {
+    margin-bottom: 10px;
+}
+
+#contato-section .contact-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+#contato-section .contact-form form {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Garante que o texto do formulário esteja alinhado à esquerda */
+}
+
+#contato-section .form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo para os campos de Nome e Email lado a lado */
+.form-group.inline {
+    display: flex; /* Flex para alinhar lado a lado */
+    gap: 20px; /* Espaço entre os campos */
+}
+
+/* Aumenta o padding e remove a borda dos campos */
+#contato-section .form-group input,
+#contato-section .form-group textarea {
+    padding: 18px; /* Aumenta o padding */
+    border: none; /* Remove a borda dos campos */
+    border-radius: 4px;
+    background-color: #f6f6f6; /* Cor cinza clara para os campos */
+    font-size: 14px; /* Tamanho da fonte padrão */
+    font-family: 'Sua Fonte Padrão', sans-serif; /* Substitua 'Sua Fonte Padrão' pela fonte que você usa */
+    width: 100%; /* Garante que todos os campos ocupem 100% da largura disponível */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
+}
+
+/* Para garantir que o Nome e o E-mail ocupem a largura correta */
+.form-group.inline input {
+    flex: 1; /* Faz os campos ocuparem o mesmo espaço */
+}
+
+/* Para garantir que o campo Assunto ocupe toda a largura */
+#contato-section .form-group input#assunto {
+    width: 100%; /* Garante que o assunto ocupe 100% da largura disponível */
+}
+
+/* Ajusta a margem do campo de assunto e textarea */
+#contato-section .form-group textarea {
+    resize: none;
+    height: 200px;
+}
+
+/* Estilo do botão */
+#contato-section button {
+    background-color: #0a7ea5;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 50%;
+}
+
+#contato-section button:hover {
+    background-color: #005f7a;
+}
+
+/* Regras específicas para os títulos e parágrafos */
+.contact-info .info {
+    margin-bottom: 20px; /* Adiciona espaço entre os conjuntos de informações */
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    color: #0a7ea5;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 20px; /* Ajuste a margem para espaçamento */
+    text-align: left !important; /* Força o alinhamento à esquerda */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #contato-section .container {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        gap: 20px; /* Espaço reduzido entre os elementos */
+    }
+
+    #contato-section .contact-info,
+    #contato-section .contact-form {
+        width: 100%; /* Garante que ambas as seções ocupem a largura total */
+        margin: 0; /* Remove margens laterais */
+        padding: 0px;
+    }
+
+    #contato-section h2 {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    #contato-section p {
+        font-size: 14px; /* Reduz o tamanho do parágrafo */
+    }
+
+    #contato-section .form-group.inline {
+        flex-direction: column; /* Alinha os campos verticalmente em telas menores */
+        gap: 10px; /* Reduz o espaçamento */
+    }
+
+    #contato-section button {
+        width: 100%; /* Botão ocupa toda a largura disponível */
+    }
+}
+
+/* Rodapé */
+
+footer {
+    background: url('images/background3_header.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 40px 0;
+    position: relative;
+    z-index: 1; /* Posição do footer */
+}
+
+.footer-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Escurecimento da imagem de fundo */
+}
+
+
+.footer-container {
+    display: flex;
+    flex-direction: row; /* Isso garante que os filhos fiquem em linha */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+.footer-container {
+        display: block;
+    }
+}
+
+
+.footer-logo {
+    flex: 1;
+    padding-right: 100px; /* Aumenta a distância entre a logo e a próxima coluna */
+}
+
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    margin: 10px 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.social-links img {
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.footer-services, .footer-info, .footer-contact {
+    flex: 1;
+    margin-top: 50px; /* Desce essas colunas */
+}
+
+.footer-services h3, .footer-info h3, .footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-services ul, .footer-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-services ul li, .footer-info ul li {
+    margin-bottom: 8px;
+}
+
+.footer-services ul li a, .footer-info ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
+    color: white;
+}
+
+.footer-services ul li a:hover, 
+.footer-info ul li a:hover {
+    color: #0a7ea5; /* Cor do texto ao passar o mouse */
+    transition: color 0.3s ease; /* Suaviza a transição da cor */
+}
+
